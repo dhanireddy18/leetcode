@@ -1,13 +1,17 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
 class Solution:
     def deleteDuplicates(self, head):
-        current = head
+        node = head
 
-        while current and current.next:
-            if current.val == current.next.val:
-                # Remove the duplicate node
-                current.next = current.next.next
+        while node and node.next:
+            if node.val == node.next.val:
+                node.next = node.next.next
             else:
-                # Move to the next node
-                current = current.next
+                node = node.next
 
         return head
