@@ -4,6 +4,8 @@ class Solution:
         ms = cs
         for i in range(k,len(nums)):
             cs += nums[i] - nums[i-k]
-            ms = max(ms,cs)
+            if cs>ms:
+                ms =cs
+
         return ms/k    
         
