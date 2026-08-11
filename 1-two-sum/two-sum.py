@@ -1,13 +1,13 @@
 class Solution:
     def twoSum(self, nums, target):
-        arr=[]
+        dic={}
+        cur=0
+        for i in range(len(nums)):
+            cur =target -nums[i]
+            if cur in dic:
+                return [dic[cur],i]
+            else:
+                dic[nums[i]]=i
 
-        for i,v in enumerate(nums):
-            for j in range(i+1,len(nums)):
 
-                 if nums[j]+v==target:
-                    arr.append(i)
 
-                    arr.append(j)
-                    return arr
-        return arr
