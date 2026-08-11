@@ -1,11 +1,13 @@
 class Solution:
     def twoSum(self, nums, target):
-        hashmap = {}
+        arr=[]
 
-        for i, num in enumerate(nums):
-            complement = target - num
+        for i,v in enumerate(nums):
+            for j in range(i+1,len(nums)):
 
-            if complement in hashmap:
-                return [hashmap[complement], i]
+                 if nums[j]+v==target:
+                    arr.append(i)
 
-            hashmap[num] = i
+                    arr.append(j)
+                    return arr
+        return arr
